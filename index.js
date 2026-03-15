@@ -1,3 +1,6 @@
+if (!globalThis.crypto) {
+  globalThis.crypto = require('crypto').webcrypto;
+}
 const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, makeInMemoryStore, jidDecode } = require('@whiskeysockets/baileys');
 const { Boom } = require('@hapi/boom');
 const pino = require('pino');
